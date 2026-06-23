@@ -12,7 +12,7 @@ Accesibilidad al Aeropuerto Internacional de la Ciudad de México mediante Trans
 Análisis geoespacial con datos abiertos GTFS
 
 **Información:**
-- Equipo: Roberto Rojas Avila + Janine
+- Equipo: Roberto Alfonso Rojas Avila + Janine Elizabeth Flores Beltran
 - Programa: Programa Delfín 2026
 - Eje 3: Movilidad, Aeropuerto y Eventos Urbanos
 - Fecha: 22 de junio de 2026
