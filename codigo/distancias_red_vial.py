@@ -83,8 +83,15 @@ def visualizar_rutas_ejemplo(G, paradas):
     """Visualiza la red vial y algunas rutas de ejemplo"""
     print("\nGenerando visualización de rutas...")
     
-    # Seleccionar 5 paradas de ejemplo a diferentes distancias
-    ejemplos = paradas.nsmallest(5, 'distancia_red_km')
+    # Seleccionar 5 paradas de ejemplo de diferentes rangos de distancia
+    # 1 cercana (< 2km), 2 medias (2-3.5km), 2 lejanas (> 3.5km)
+    cercanas = paradas[paradas['distancia_red_km'] < 2.0].nsmallest(1, 'distancia_red_km')
+    medias_bajas = paradas[(paradas['distancia_red_km'] >= 2.0) & (paradas['distancia_red_km'] < 3.5)].sample(1, random_state=42)
+    medias_altas = paradas[(paradas['distancia_red_km'] >= 3.5) & (paradas['distancia_red_km'] < 4.5)].sample(1, random_state=42)
+    lejanas_cercanas = paradas[(paradas['distancia_red_km'] >= 4.5) & (paradas['distancia_red_km'] < 5.0)].sample(1, random_state=42)
+    lejanas = paradas[paradas['distancia_red_km'] >= 5.0].nsmallest(1, 'distancia_red_km')
+
+    ejemplos = pd.concat([cercanas, medias_bajas, medias_altas, lejanas_cercanas, lejanas])
     
     fig, ax = plt.subplots(figsize=(12, 10))
     
