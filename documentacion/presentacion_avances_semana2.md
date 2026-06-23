@@ -217,39 +217,56 @@ La visualización revela patrones espaciales de accesibilidad que no son evident
 "Este mapa de calor muestra la accesibilidad real al aeropuerto desde cada punto de la ciudad. Pueden observar que las zonas más cercanas (en verde) están concentradas en el oriente, mientras que el poniente y sur tienen menor accesibilidad."
 
 ---
+---
 
-## DIAPOSITIVA 9: VISUALIZACIÓN - MAPA DE RADIOS
+## DIAPOSITIVA 9: VISUALIZACIÓN - MAPA DE CALOR DE VIALIDADES
 
-**[INSERTAR IMAGEN: visualizaciones/mapa_radios_accesibilidad_aicm.png]**
+**[INSERTAR IMAGEN: visualizaciones/mapa_calor_vialidades_aicm.png]**
 
 **Descripción del mapa:**
-- Anillos concéntricos muestran los 4 radios de análisis
-- Puntos de colores representan paradas de transporte público
-- Estrella roja marca la ubicación del AICM
+- Cada calle de la CDMX coloreada según accesibilidad al AICM
+- Verde = calles cercanas al aeropuerto
+- Rojo = calles lejanas al aeropuerto
+- 488,332 calles analizadas
+- Misma escala de colores que el mapa de paradas
+
+**Estadísticas:**
+- Distancia mínima: 0.02 km
+- Distancia máxima: 38.69 km
+- Distancia promedio: 18.43 km
+- Mediana: 18.44 km
 
 **Mensaje clave:**
-El análisis multi-radio permite identificar diferentes niveles de accesibilidad.
+Este mapa muestra la accesibilidad real desde CUALQUIER punto de la red vial, no solo desde paradas de transporte público.
 
 **Notas para el presentador:**
-"Este mapa muestra los anillos concéntricos de accesibilidad. La distribución de paradas revela cómo se estructura el acceso al aeropuerto desde diferentes distancias."
+"Este mapa muestra cada calle de la ciudad coloreada según qué tan fácil es llegar al aeropuerto. El verde indica calles cercanas, el rojo indica calles lejanas. Esto nos da una visión completa de la accesibilidad vial."
 
 ---
 
-## DIAPOSITIVA 10: VISUALIZACIÓN - RUTAS EN RED VIAL
+## DIAPOSITIVA 10: COMPARACIÓN - TRANSPORTE PÚBLICO VS VIALIDADES
 
-**[INSERTAR IMAGEN: visualizaciones/rutas_red_vial_aicm.png]**
+**Dos vistas de la accesibilidad al AICM:**
 
-**Descripción:**
-- Red vial de OpenStreetMap
-- Rutas de ejemplo desde diferentes paradas al AICM
-- Muestra la complejidad de la red
+| Métrica | Transporte Público | Vialidades | Diferencia |
+|---------|-------------------|------------|-----------|
+| Distancia mínima | 0.91 km | 0.02 km | Paradas más lejos |
+| Distancia máxima | 32.73 km | 38.69 km | Vialidades más lejos |
+| **Distancia promedio** | **15.29 km** | **18.43 km** | **+3.14 km** |
+| **Mediana** | **15.28 km** | **18.44 km** | **+3.16 km** |
+| Elementos analizados | 11,362 paradas | 488,332 calles | - |
 
-**Mensaje clave:**
-Las rutas reales por carretera son más complejas que las distancias euclidianas.
+**Interpretación:**
+- Las paradas de transporte público están en promedio 3 km más cerca del aeropuerto
+- El transporte público está estratégicamente ubicado para optimizar acceso
+- Las vialidades incluyen todas las calles, incluso las más alejadas
+- Existe una brecha de accesibilidad entre infraestructura vial y transporte público
+
+**Visualizaciones comparables:**
+[INSERTAR: Ambos mapas lado a lado con la misma escala de colores]
 
 **Notas para el presentador:**
-"Estas rutas muestran cómo el transporte público debe navegar la red vial real para llegar al aeropuerto, lo que explica por qué las distancias son mayores que en línea recta."
-
+"Al comparar ambos mapas con la misma escala de colores, podemos ver que el transporte público tiende a concentrarse en zonas con mejor acceso al aeropuerto, mientras que muchas calles residenciales están más alejadas. Esto sugiere que el transporte público está optimizando rutas, pero dejando zonas con menor cobertura."
 ---
 
 ## DIAPOSITIVA 11: PRÓXIMOS PASOS - SEMANA 3
@@ -365,7 +382,9 @@ Las rutas reales por carretera son más complejas que las distancias euclidianas
 2. La asimetría entre terminales es un hallazgo importante
 3. El factor de desvío (1.52x) es crucial para entender accesibilidad real
 4. El análisis completo de 11,362 paradas es exhaustivo
-5. Hay un plan claro para las próximas semanas
+5. **NUEVO: La comparación entre paradas y vialidades revela brechas de accesibilidad**
+6. **NUEVO: El transporte público está optimizado pero deja zonas desatendidas**
+7. Hay un plan claro para las próximas semanas
 
 **Posibles preguntas y respuestas:**
 
@@ -386,3 +405,6 @@ R: "El objetivo es generar un dashboard interactivo que permita visualizar la ac
 
 **P: ¿Por qué es relevante este análisis?**
 R: "El AICM es el aeropuerto más importante de México. Entender su accesibilidad es crucial para la equidad territorial y la eficiencia del sistema de transporte."
+
+**P: ¿Por qué las paradas de transporte están más cerca que las vialidades en promedio?**
+R: "Porque el transporte público está diseñado para dar servicio. Las rutas se planifican estratégicamente para conectar zonas pobladas con destinos importantes como el aeropuerto. Las vialidades, en cambio, incluyen todas las calles de la ciudad, incluso las más alejadas y residenciales. Esta diferencia de 3 km en promedio muestra que el transporte público está optimizando el acceso, pero también revela que hay zonas con menor cobertura."
