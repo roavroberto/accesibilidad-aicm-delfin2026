@@ -255,6 +255,47 @@ Este documento cataloga todos los conjuntos de datos que serán utilizados en el
 - El AICM se ubica en la alcaldía Venustiano Carranza
 - Necesario para análisis espacial por zona
 
+### 9. Vialidades Primarias CDMX
+
+**Fuente:** Secretaría de Movilidad (SEMOVI) - Portal Datos Abiertos CDMX  
+**URL:** https://datos.cdmx.mx/dataset/vialidades-primarias  
+**Formato:** GeoJSON  
+**Registros:** 10,567 vialidades primarias  
+**Fecha Actualización:** 4 diciembre 2023  
+**Estado:** ✅ Descargado
+
+**Columnas principales:**
+- `ID_VIA`: Identificador único
+- `NOMBRE`: Nombre de la vialidad
+- `TIPO_VIA`: Tipo de vía
+- `CARRILES`: Número de carriles
+- `NIVEL`: Nivel de la vía
+- `CIRCULA`: Sentido de circulación
+- `ALCALDIA`: Alcaldía
+- `geometry`: Geometría de la vía
+
+**Utilidad para el proyecto:**
+- Análisis de conectividad vial al aeropuerto
+- Cálculo de distancias en red (no euclidianas)
+- Identificación de principales vías de acceso
+
+### 10. Red Vial OpenStreetMap (procesada)
+
+**Fuente:** OpenStreetMap vía OSMnx  
+**Formato:** Grafo NetworkX (procesado)  
+**Registros:** 13,949 nodos, 34,867 calles  
+**Radio de análisis:** 5 km alrededor del AICM  
+**Estado:** ✅ Procesado
+
+**Datos derivados:**
+- Factor de desvío promedio: 1.52x
+- Distancias reales por carretera calculadas
+- Rutas más cortas identificadas
+
+**Utilidad para el proyecto:**
+- Cálculo de distancias reales (no euclidianas)
+- Análisis de tiempos de viaje
+- Validación de accesibilidad
 ---
 
 ## Plan de Descarga de Datos
