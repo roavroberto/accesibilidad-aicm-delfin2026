@@ -62,3 +62,30 @@ streamlit run codigo/dashboard_streamlit.py
 Un mapa web independiente con más de 11,000 paradas georreferenciadas, capas intercambiables (distancia, tiempo, velocidad) y marcadores de las terminales T1 y T2.
 Para abrir el mapa:
 Abre el archivo visualizaciones/mapa_interactivo_accesibilidad_aicm.html en cualquier navegador web.
+
+## Análisis Temporal: Horas Pico vs Horas Valle (Semana 4)
+
+Utilizando el archivo `frequencies.txt` del GTFS, analizamos si la frecuencia del servicio varía entre horas pico (7-9 AM, 6-8 PM) y horas valle (10 AM - 4 PM).
+
+### Hallazgo Principal: Frecuencia Constante
+
+El sistema de transporte público de la CDMX mantiene una **frecuencia prácticamente idéntica** entre ambos períodos:
+
+| Métrica | Hora Pico | Hora Valle | Diferencia |
+|---------|-----------|------------|------------|
+| Frecuencia promedio | 27.1 viajes/hora | 27.1 viajes/hora | 0.0% |
+| Zonas cercanas (<10 km) | 36.7 viajes/hora | 36.5 viajes/hora | 0.4% |
+| Zonas lejanas (≥20 km) | 13.1 viajes/hora | 13.3 viajes/hora | -1.2% |
+
+### Interpretación
+
+- **No hay penalización temporal:** La accesibilidad al AICM no empeora en horas valle
+- **Diseño orientado a cobertura constante:** El sistema prioriza mantener servicio uniforme durante todo el día
+- **La brecha es geográfica, no temporal:** Las zonas lejanas tienen 2.8 veces menos frecuencia que las cercanas, pero esta brecha se mantiene constante en ambos períodos
+
+### Archivos del análisis temporal
+
+- `codigo/analisis_horas_pico_valle_v2.py` - Script de análisis
+- `datos/resultados/frecuencia_pico_valle.csv` - Datos procesados
+- `visualizaciones/analisis_pico_vs_valle_v2.png` - Gráfico comparativo
+- `visualizaciones/alcaldias_pico_vs_valle_v2.png` - Análisis por alcaldía
