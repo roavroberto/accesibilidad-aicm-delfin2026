@@ -89,3 +89,17 @@ El sistema de transporte público de la CDMX mantiene una **frecuencia práctica
 - `datos/resultados/frecuencia_pico_valle.csv` - Datos procesados
 - `visualizaciones/analisis_pico_vs_valle_v2.png` - Gráfico comparativo
 - `visualizaciones/alcaldias_pico_vs_valle_v2.png` - Análisis por alcaldía
+
+## Análisis de Eventos y Movilidad (Semana 5)
+
+Analizamos la capacidad del transporte público para atender la demanda de los principales venues de eventos alrededor del AICM.
+
+### Venues Analizados
+1. **Palacio de los Deportes** (20,000 cap.) - Ratio: 6.02x ✅
+2. **Arena CDMX** (22,500 cap.) - Ratio: 5.94x ✅
+3. **Centro de Exposiciones Banamex** (10,000 cap.) - Ratio: 6.57x ✅
+4. **Estadio GNP Seguros / Foro Sol** (65,000 cap.) - Ratio: 1.78x ⚠️
+5. **Autódromo Hermanos Rodríguez** (80,000 cap.) - Ratio: 1.19x 🔴
+
+### Hallazgo Principal
+El **Autódromo Hermanos Rodríguez** y el **Foro Sol** operan en zona crítica durante eventos masivos. La capacidad del transporte público apenas cubre la demanda (ratio < 2x), lo que requiere rutas especiales y buses lanzadera obligatorios para evitar el colapso de la movilidad.
