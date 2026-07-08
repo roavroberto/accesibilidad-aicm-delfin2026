@@ -319,3 +319,67 @@ Para explorar los mapas interactivos con zoom, popups y capas:
 3. **Abre en tu navegador:** Ve a `visualizaciones/mapas_geograficos_contaminacion/` y abre cualquier archivo `.html`
 
 O consulta las instrucciones detalladas en: `visualizaciones/mapas_geograficos_contaminacion/README.md`
+
+## Mapas de Accesibilidad al AICM: Impacto de Eventos Masivos (Semana 5)
+
+Análisis de cómo la accesibilidad al AICM (tiempos de viaje desde transporte público) se ve afectada antes, durante y después de eventos masivos debido a la congestión vehicular.
+
+### Metodología
+- **Datos base:** 11,362 paradas de transporte público con velocidades promedio
+- **Modelo de congestión:** Simulación de reducción de velocidad por eventos masivos
+- **Factores considerados:**
+  - Distancia al venue del evento (congestión local)
+  - Distancia al AICM (congestión general)
+  - Tipo de evento (concierto, deportivo, temporada)
+- **Períodos analizados:** Antes, durante y después de cada evento
+
+### Hallazgos Principales
+
+**Impacto en Tiempos de Viaje:**
+
+| Evento | Asistentes | Tiempo Antes | Tiempo Durante | Incremento |
+|--------|-----------|--------------|----------------|------------|
+| Gran Premio F1 | 80,000 | 53.0 min | 57.4 min | +8.3% |
+| Concierto Foro Sol | 65,000 | 53.0 min | 55.8 min | +5.3% |
+| Temporada Decembrina | 30,000 | 53.0 min | 54.3 min | +2.4% |
+
+**Interpretación:**
+- El transporte público es resiliente: incrementos moderados (+2.4% a +8.3%)
+- Los eventos masivos afectan más la calidad del aire (76-109%) que la movilidad del transporte público (+2-8%)
+- Las rutas de transporte público mantienen servicio constante incluso durante eventos
+
+### Visualizaciones Generadas
+
+**Mapas Interactivos (HTML):**
+- `accesibilidad_Concierto_Foro_Sol_antes.html`
+- `accesibilidad_Concierto_Foro_Sol_durante.html`
+- `accesibilidad_Concierto_Foro_Sol_despues.html`
+- `accesibilidad_Gran_Premio_F1_antes.html`
+- `accesibilidad_Gran_Premio_F1_durante.html`
+- `accesibilidad_Gran_Premio_F1_despues.html`
+- `accesibilidad_Temporada_Decembrina_antes.html`
+- `accesibilidad_Temporada_Decembrina_durante.html`
+- `accesibilidad_Temporada_Decembrina_despues.html`
+
+**Comparativas Visuales (PNG):**
+- `comparativa_accesibilidad_Concierto_Foro_Sol.png`
+- `comparativa_accesibilidad_Gran_Premio_F1.png`
+- `comparativa_accesibilidad_Temporada_Decembrina.png`
+
+### Archivos Generados
+- `codigo/mapas_accesibilidad_eventos.py` - Script de generación de mapas
+- `datos/resultados/resumen_accesibilidad_eventos.csv` - Tabla resumen
+- `visualizaciones/mapas_accesibilidad_eventos/` - Todos los mapas (9 HTML + 3 PNG)
+
+### Cómo ver los mapas interactivos
+1. Descarga el repositorio completo
+2. Navega a `visualizaciones/mapas_accesibilidad_eventos/`
+3. Abre cualquier archivo `.html` en tu navegador
+4. Explora los mapas con zoom y popups interactivos
+
+### Colores del Mapa
+- **Rojo:** Excelente accesibilidad (<30 min)
+- **Naranja:** Buena accesibilidad (30-60 min)
+- **Amarillo:** Accesibilidad moderada (60-90 min)
+- **Cyan:** Accesibilidad regular (90-120 min)
+- **Azul:** Mala accesibilidad (>120 min)
