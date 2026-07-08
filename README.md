@@ -158,3 +158,55 @@ Análisis del impacto de eventos masivos en la calidad del aire alrededor del AI
 - `visualizaciones/impacto_eventos_contaminacion.png` - Comparación de impactos
 - `visualizaciones/correlacion_viajes_contaminacion.png` - Scatter plots de correlaciones
 - `visualizaciones/heatmap_correlaciones.png` - Matriz de correlaciones
+
+## Mapas de Contaminación: Antes, Durante y Después de Eventos (Semana 5)
+
+Generación de mapas de calor y mapas interactivos que muestran la evolución de la contaminación alrededor del AICM en ventanas temporales de eventos masivos.
+
+### Metodología
+- **Ventanas temporales:** 7 días antes, durante y 7 días después de cada evento
+- **Contaminantes analizados:** PM2.5, PM10 y NO2
+- **Estaciones SIMAT:** Peñones (2.85 km), Merced (3.93 km), UAM-Iztapalapa (8.73 km), Xalostoc (9.91 km)
+- **Visualizaciones:** Mapas de calor estáticos (PNG) y mapas geográficos interactivos (HTML)
+
+### Hallazgos Principales
+
+| Evento | Asistentes | Incremento PM2.5 | Incremento PM10 | Incremento NO2 |
+|--------|-----------|------------------|-----------------|----------------|
+| Gran Premio F1 | 80,000 | +109.1% | +107.8% | +111.5% |
+| Concierto Foro Sol | 65,000 | +76.0% | +94.0% | +79.4% |
+| Temporada Decembrina | 30,000 | +43.0% | +19.1% | +19.6% |
+
+### Visualizaciones Generadas
+
+**Mapas de Calor Estáticos (PNG):**
+- `mapa_calor_Concierto_Foro_Sol_PM25.png`
+- `mapa_calor_Concierto_Foro_Sol_PM10.png`
+- `mapa_calor_Concierto_Foro_Sol_NO2.png`
+- `mapa_calor_Gran_Premio_F1_PM25.png`
+- `mapa_calor_Gran_Premio_F1_PM10.png`
+- `mapa_calor_Gran_Premio_F1_NO2.png`
+- `mapa_calor_Temporada_Decembrina_PM25.png`
+- `mapa_calor_Temporada_Decembrina_PM10.png`
+- `mapa_calor_Temporada_Decembrina_NO2.png`
+
+**Mapas Interactivos (HTML):**
+- `mapa_interactivo_Concierto_Foro_Sol.html`
+- `mapa_interactivo_Gran_Premio_F1.html`
+- `mapa_interactivo_Temporada_Decembrina.html`
+
+**Comparativa General:**
+- `comparativa_todos_eventos.png` - Los 3 eventos lado a lado
+
+### Archivos Generados
+- `codigo/mapas_contaminacion_eventos.py` - Script de generación de mapas
+- `datos/resultados/resumen_mapas_contaminacion.csv` - Tabla resumen con incrementos
+- `visualizaciones/mapas_contaminacion/` - Todos los mapas (9 PNG + 3 HTML)
+
+### Interpretación
+Los mapas muestran claramente cómo los eventos masivos incrementan significativamente la contaminación:
+- **Gran Premio F1:** Duplica los niveles de PM2.5 y NO2
+- **Concierto Foro Sol:** Incrementa 76% PM2.5 y 94% PM10
+- **Temporada Decembrina:** Incremento moderado del 43% en PM2.5
+
+Los mapas interactivos permiten explorar la ubicación de las estaciones de monitoreo, los venues de eventos y los niveles de contaminación en diferentes períodos temporales.
