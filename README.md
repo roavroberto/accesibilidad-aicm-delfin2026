@@ -294,3 +294,28 @@ Para explorar los mapas interactivos con zoom, popups y capas:
 3. **Abre en tu navegador:** Ve a `visualizaciones/mapas_geograficos_contaminacion/` y abre cualquier archivo `.html`
 
 O consulta las instrucciones detalladas en: `visualizaciones/mapas_geograficos_contaminacion/README.md`
+
+---
+
+## 📸 Vista Previa de Mapas Geográficos
+
+### Comparativa: Evolución de Contaminación Durante Eventos
+
+**Concierto Foro Sol:**
+![Comparativa Concierto Foro Sol](visualizaciones/mapas_geograficos_contaminacion/comparativa_espacial_Concierto_Foro_Sol.png)
+
+**Gran Premio F1:**
+![Comparativa Gran Premio F1](visualizaciones/mapas_geograficos_contaminacion/comparativa_espacial_Gran_Premio_F1.png)
+
+**Temporada Decembrina:**
+![Comparativa Temporada Decembrina](visualizaciones/mapas_geograficos_contaminacion/comparativa_espacial_Temporada_Decembrina.png)
+
+### Cómo ver los mapas interactivos completos
+
+Para explorar los mapas interactivos con zoom, popups y capas:
+
+1. **Descarga el repositorio:** Botón verde "Code" → "Download ZIP"
+2. **Descomprime el archivo**
+3. **Abre en tu navegador:** Ve a `visualizaciones/mapas_geograficos_contaminacion/` y abre cualquier archivo `.html`
+
+O consulta las instrucciones detalladas en: `visualizaciones/mapas_geograficos_contaminacion/README.md`
