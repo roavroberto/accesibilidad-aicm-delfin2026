@@ -103,3 +103,58 @@ Analizamos la capacidad del transporte público para atender la demanda de los p
 
 ### Hallazgo Principal
 El **Autódromo Hermanos Rodríguez** y el **Foro Sol** operan en zona crítica durante eventos masivos. La capacidad del transporte público apenas cubre la demanda (ratio < 2x), lo que requiere rutas especiales y buses lanzadera obligatorios para evitar el colapso de la movilidad.
+
+## Análisis de Series Temporales (Semana 5)
+
+Metodología completa para análisis de series temporales de movilidad, aplicable a datos históricos reales.
+
+### Componentes Analizados
+- **Tendencia**: Crecimiento gradual de la demanda
+- **Estacionalidad**: Patrones por hora, día y mes
+- **Anomalías**: Identificación usando Z-score (>2 desviaciones estándar)
+- **Descomposición**: Separación de componentes
+
+### Hallazgos Principales
+- **Hora pico**: 07:00 (1,665 viajes/hora)
+- **Hora valle**: 01:00 (329 viajes/hora)
+- **Día más activo**: Lunes (1,012 viajes/hora)
+- **Anomalías detectadas**: 280 (3.20% del total)
+- **Anomalía más extrema**: Z-score = 8.65 (Gran Premio F1)
+
+### Archivos Generados
+- `codigo/analisis_series_temporales.py` - Script de análisis
+- `datos/resultados/series_temporales/` - Series temporales procesadas
+- `visualizaciones/serie_temporal_completa.png` - Serie completa con anomalías
+- `visualizaciones/descomposicion_serie_temporal.png` - Descomposición de componentes
+- `visualizaciones/patrones_estacionalidad.png` - Patrones por hora/día/mes
+
+## Análisis de Eventos y Contaminación (Semana 5)
+
+Análisis del impacto de eventos masivos en la calidad del aire alrededor del AICM, cruzando datos de movilidad y contaminación.
+
+### Impacto de Eventos Masivos en Contaminación
+
+| Evento | Asistentes | Incremento Viajes | PM2.5 | PM10 | NO2 |
+|--------|-----------|-------------------|-------|------|-----|
+| Concierto Foro Sol | 65,000 | +225.7% | +87.6% | +94.0% | +79.4% |
+| Gran Premio F1 | 80,000 | +148.1% | +107.1% | +107.8% | +111.5% |
+| Temporada Decembrina | 30,000 | +14.7% | +21.6% | +19.1% | +19.6% |
+
+### Correlaciones Movilidad-Contaminación
+- **Viajes vs PM2.5**: 0.612 (fuerte correlación positiva)
+- **Viajes vs PM10**: 0.496 (correlación moderada-fuerte)
+- **Viajes vs NO2**: 0.569 (fuerte correlación positiva)
+- **Viajes vs O3**: 0.176 (correlación débil)
+
+### Hallazgos Clave
+1. **Eventos masivos duplican la contaminación**: El Gran Premio F1 incrementa PM2.5 y PM10 en más del 100%
+2. **El tráfico es el principal contaminante**: Fuerte correlación entre viajes y NO2/PM2.5
+3. **Temporadas sostenidas tienen menor impacto**: La temporada decembrina solo incrementa 15-22% la contaminación
+
+### Archivos Generados
+- `codigo/analisis_eventos_contaminacion.py` - Script de análisis
+- `datos/resultados/impacto_eventos_contaminacion.csv` - Impacto cuantificado
+- `visualizaciones/series_contaminacion_eventos.png` - Series temporales de contaminantes
+- `visualizaciones/impacto_eventos_contaminacion.png` - Comparación de impactos
+- `visualizaciones/correlacion_viajes_contaminacion.png` - Scatter plots de correlaciones
+- `visualizaciones/heatmap_correlaciones.png` - Matriz de correlaciones
