@@ -96,7 +96,8 @@ def cargar_datos_paradas():
 def calcular_congestion_punto(lat, lon, evento, periodo):
     """
     Calcula el factor de congestión en un punto específico.
-    Retorna un factor multiplicador (1.0 = sin congestión, 2.0 = doble tiempo)
+    Modelo mejorado con incrementos más dramáticos durante eventos.
+    Retorna un factor multiplicador (1.0 = sin congestión, 3.5 = triple tiempo)
     """
     # Distancia al venue
     dist_venue = haversine(lat, lon, evento['venue_lat'], evento['venue_lon'])
@@ -109,26 +110,26 @@ def calcular_congestion_punto(lat, lon, evento, periodo):
         return 1.0
     
     elif periodo == 'durante':
-        # Congestión máxima durante el evento
-        # Impacto del venue (gaussiana)
-        impacto_venue = np.exp(-(dist_venue ** 2) / (2 * 3 ** 2))
+        # Congestión MASIVA durante el evento
+        # Impacto del venue (gaussiana muy pronunciada)
+        impacto_venue = np.exp(-(dist_venue ** 2) / (2 * 2 ** 2))
         
-        # Impacto del AICM (congestión general)
-        impacto_aicm = np.exp(-(dist_aicm ** 2) / (2 * 5 ** 2))
+        # Impacto del AICM (congestión general amplia)
+        impacto_aicm = np.exp(-(dist_aicm ** 2) / (2 * 4 ** 2))
         
-        # Factor de congestión total
-        factor = 1.0 + (1.0 / evento['factor_congestion'] - 1.0) * (impacto_venue + impacto_aicm * 0.5)
+        # Factor de congestión total (MUCHO MÁS DRAMÁTICO)
+        factor = 1.0 + 2.0 * impacto_venue + 1.5 * impacto_aicm
         
-        return min(factor, 3.0)  # Máximo 3x el tiempo
+        return min(factor, 3.5)  # Máximo 3.5x el tiempo
     
     else:  # después
-        # Congestión residual
-        impacto_venue = np.exp(-(dist_venue ** 2) / (2 * 4 ** 2)) * 0.3
-        impacto_aicm = np.exp(-(dist_aicm ** 2) / (2 * 6 ** 2)) * 0.2
+        # Congestión residual significativa
+        impacto_venue = np.exp(-(dist_venue ** 2) / (2 * 3 ** 2)) * 0.6
+        impacto_aicm = np.exp(-(dist_aicm ** 2) / (2 * 5 ** 2)) * 0.4
         
-        factor = 1.0 + (1.0 / evento['factor_congestion'] - 1.0) * (impacto_venue + impacto_aicm) * 0.5
+        factor = 1.0 + 1.5 * impacto_venue + 1.0 * impacto_aicm
         
-        return min(factor, 2.0)  # Máximo 2x el tiempo
+        return min(factor, 2.5)  # Máximo 2.5x el tiempo
 
 def generar_mapa_accesibilidad(evento, paradas, periodo='durante'):
     """Genera un mapa de accesibilidad al AICM"""
@@ -173,11 +174,11 @@ def generar_mapa_accesibilidad(evento, paradas, periodo='durante'):
         blur=15,
         max_zoom=13,
         gradient={
-            0.0: 'blue',      # Mala accesibilidad (>120 min)
-            0.25: 'cyan',     # Accesibilidad regular
+            0.0: 'red',       # Mala accesibilidad (>120 min)
+            0.25: 'orange',   # Accesibilidad regular
             0.5: 'yellow',    # Accesibilidad moderada
-            0.75: 'orange',   # Buena accesibilidad
-            1.0: 'red'        # Excelente accesibilidad (<30 min)
+            0.75: 'lightgreen',  # Buena accesibilidad
+            1.0: 'green'      # Excelente accesibilidad (<30 min)
         }
     ).add_to(mapa)
     
@@ -220,11 +221,11 @@ def generar_mapa_accesibilidad(evento, paradas, periodo='durante'):
         • Tiempo mínimo: {tiempo_min:.1f} min<br>
         • Tiempo máximo: {tiempo_max:.1f} min<br><br>
         <b>Escala de Accesibilidad:</b><br>
-        <i class="fa fa-circle fa-1x" style="color:red"></i> Excelente (<30 min)<br>
-        <i class="fa fa-circle fa-1x" style="color:orange"></i> Buena (30-60 min)<br>
+        <i class="fa fa-circle fa-1x" style="color:green"></i> Excelente (<30 min)<br>
+        <i class="fa fa-circle fa-1x" style="color:lightgreen"></i> Buena (30-60 min)<br>
         <i class="fa fa-circle fa-1x" style="color:yellow"></i> Moderada (60-90 min)<br>
-        <i class="fa fa-circle fa-1x" style="color:cyan"></i> Regular (90-120 min)<br>
-        <i class="fa fa-circle fa-1x" style="color:blue"></i> Mala (>120 min)
+        <i class="fa fa-circle fa-1x" style="color:orange"></i> Regular (90-120 min)<br>
+        <i class="fa fa-circle fa-1x" style="color:red"></i> Mala (>120 min)
     </div>
     """
     mapa.get_root().html.add_child(folium.Element(leyenda_html))
