@@ -210,3 +210,62 @@ Los mapas muestran claramente cómo los eventos masivos incrementan significativ
 - **Temporada Decembrina:** Incremento moderado del 43% en PM2.5
 
 Los mapas interactivos permiten explorar la ubicación de las estaciones de monitoreo, los venues de eventos y los niveles de contaminación en diferentes períodos temporales.
+
+## Mapas Geográficos de Contaminación: Evolución Espacial (Semana 5)
+
+Generación de mapas geográficos interactivos que muestran cómo la contaminación se distribuye y expande espacialmente alrededor del AICM durante eventos masivos.
+
+### Metodología
+- **Rejilla de puntos:** 3,600 puntos (60x60) distribuidos sobre la CDMX
+- **Modelo de contaminación:** Basado en distancia al venue, AICM y estaciones SIMAT
+- **Factores considerados:**
+  - Distancia al venue del evento (impacto principal durante eventos)
+  - Distancia al AICM (tráfico aeroportuario constante)
+  - Dispersión gaussiana con diferentes radios según período
+- **Períodos analizados:** Antes, durante y después de cada evento
+
+### Hallazgos Visuales Principales
+
+**Concierto Foro Sol (65,000 asistentes):**
+- Antes: Contaminación baja y concentrada
+- Durante: Gran expansión de contaminación desde el venue
+- Después: Contaminación residual que gradualmente disminuye
+
+**Gran Premio F1 (80,000 asistentes):**
+- Antes: Niveles base de contaminación
+- Durante: Máxima expansión con "nube" de contaminación visible
+- Después: Contaminación elevada que persiste
+
+**Temporada Decembrina (30,000 asistentes):**
+- Antes: Contaminación moderada
+- Durante: Incremento visible pero menos dramático
+- Después: Retorno gradual a niveles normales
+
+### Visualizaciones Generadas
+
+**Mapas Interactivos (HTML):**
+- `mapa_geografico_Concierto_Foro_Sol_antes.html`
+- `mapa_geografico_Concierto_Foro_Sol_durante.html`
+- `mapa_geografico_Concierto_Foro_Sol_despues.html`
+- `mapa_geografico_Gran_Premio_F1_antes.html`
+- `mapa_geografico_Gran_Premio_F1_durante.html`
+- `mapa_geografico_Gran_Premio_F1_despues.html`
+- `mapa_geografico_Temporada_Decembrina_antes.html`
+- `mapa_geografico_Temporada_Decembrina_durante.html`
+- `mapa_geografico_Temporada_Decembrina_despues.html`
+
+**Comparativas Visuales (PNG):**
+- `comparativa_espacial_Concierto_Foro_Sol.png`
+- `comparativa_espacial_Gran_Premio_F1.png`
+- `comparativa_espacial_Temporada_Decembrina.png`
+
+### Archivos Generados
+- `codigo/mapas_geograficos_contaminacion.py` - Script de generación de mapas
+- `visualizaciones/mapas_geograficos_contaminacion/` - Todos los mapas (9 HTML + 3 PNG)
+
+### Interpretación
+Los mapas geográficos muestran claramente cómo los eventos masivos no solo incrementan los niveles de contaminación, sino que también expanden espacialmente la zona afectada. Durante eventos, la contaminación se dispersa varios kilómetros desde el venue, afectando áreas residenciales cercanas. Esta visualización es particularmente útil para:
+- Planificación urbana y ubicación de futuros venues
+- Diseño de rutas de transporte público durante eventos
+- Monitoreo de calidad del aire en tiempo real
+- Comunicación visual de impactos ambientales
