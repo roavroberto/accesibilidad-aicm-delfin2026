@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aecff29d9d2b4c63b4e49a4673cce3ea {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 200px; height: 120px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+        <b>Niveles de PM2.5</b><br>
+        <i class="fa fa-circle fa-1x" style="color:green"></i> Bueno (<50 µg/m³)<br>
+        <i class="fa fa-circle fa-1x" style="color:orange"></i> Moderado (50-100 µg/m³)<br>
+        <i class="fa fa-circle fa-1x" style="color:red"></i> Dañino (>100 µg/m³)
+    </div>
+    
+    
+            <div class="folium-map" id="map_aecff29d9d2b4c63b4e49a4673cce3ea" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_aecff29d9d2b4c63b4e49a4673cce3ea = L.map(
+                "map_aecff29d9d2b4c63b4e49a4673cce3ea",
+                {
+                    center: [19.43531, -99.08367],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2785d1c30971891ad900bb3e2a7762b9 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2785d1c30971891ad900bb3e2a7762b9.addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var marker_ef2f464e2e9c3b84fc56bab4d15c59a8 = L.marker(
+                [19.43531, -99.08367],
+                {
+}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var icon_409d5b0e65982ae9768ec99d4556b201 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e2db76419cc83ffffd42b3d5a683a73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a115fe0662096b5c9f15403f7f8d1fe0 = $(`<div id="html_a115fe0662096b5c9f15403f7f8d1fe0" style="width: 100.0%; height: 100.0%;">AICM</div>`)[0];
+                popup_7e2db76419cc83ffffd42b3d5a683a73.setContent(html_a115fe0662096b5c9f15403f7f8d1fe0);
+            
+        
+
+        marker_ef2f464e2e9c3b84fc56bab4d15c59a8.bindPopup(popup_7e2db76419cc83ffffd42b3d5a683a73)
+        ;
+
+        
+    
+    
+                marker_ef2f464e2e9c3b84fc56bab4d15c59a8.setIcon(icon_409d5b0e65982ae9768ec99d4556b201);
+            
+    
+            var marker_90fd71ea4098c215b01eda1b4fd6f68a = L.marker(
+                [19.4097, -99.0847],
+                {
+}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var icon_f8c436897f87320a042364ea4feafa03 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7c42134ddc3cbffa73ef8ea41e1727f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_931775db84bd6ea1b47f4554270ae4f5 = $(`<div id="html_931775db84bd6ea1b47f4554270ae4f5" style="width: 100.0%; height: 100.0%;">Peñones<br>Distancia: 2.85 km</div>`)[0];
+                popup_f7c42134ddc3cbffa73ef8ea41e1727f.setContent(html_931775db84bd6ea1b47f4554270ae4f5);
+            
+        
+
+        marker_90fd71ea4098c215b01eda1b4fd6f68a.bindPopup(popup_f7c42134ddc3cbffa73ef8ea41e1727f)
+        ;
+
+        
+    
+    
+                marker_90fd71ea4098c215b01eda1b4fd6f68a.setIcon(icon_f8c436897f87320a042364ea4feafa03);
+            
+    
+            var marker_15a9a1235ec63979883471b61518fb50 = L.marker(
+                [19.4241, -99.1192],
+                {
+}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var icon_efcd374a9c4ffd3dc86f4e19f2ad2cae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ef669c3e5a93f8daa13789cf9beb383 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2c0f17ad956e5695fb85978a6fef55f = $(`<div id="html_b2c0f17ad956e5695fb85978a6fef55f" style="width: 100.0%; height: 100.0%;">Merced<br>Distancia: 3.93 km</div>`)[0];
+                popup_0ef669c3e5a93f8daa13789cf9beb383.setContent(html_b2c0f17ad956e5695fb85978a6fef55f);
+            
+        
+
+        marker_15a9a1235ec63979883471b61518fb50.bindPopup(popup_0ef669c3e5a93f8daa13789cf9beb383)
+        ;
+
+        
+    
+    
+                marker_15a9a1235ec63979883471b61518fb50.setIcon(icon_efcd374a9c4ffd3dc86f4e19f2ad2cae);
+            
+    
+            var marker_1033f32751d32fb6182e8f7482da0e0b = L.marker(
+                [19.3573, -99.0739],
+                {
+}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var icon_9662ee4addfae79b49e795ed675b0067 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55befdedf095639b3d7219a672107bf9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f9e679986a6c7497bb72259645a500a = $(`<div id="html_1f9e679986a6c7497bb72259645a500a" style="width: 100.0%; height: 100.0%;">UAM-Iztapalapa<br>Distancia: 8.73 km</div>`)[0];
+                popup_55befdedf095639b3d7219a672107bf9.setContent(html_1f9e679986a6c7497bb72259645a500a);
+            
+        
+
+        marker_1033f32751d32fb6182e8f7482da0e0b.bindPopup(popup_55befdedf095639b3d7219a672107bf9)
+        ;
+
+        
+    
+    
+                marker_1033f32751d32fb6182e8f7482da0e0b.setIcon(icon_9662ee4addfae79b49e795ed675b0067);
+            
+    
+            var marker_ce2b48539cf02c13cb536e0d5b9488ea = L.marker(
+                [19.5244, -99.0817],
+                {
+}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var icon_70b0e8b18c6f2a7ea0db6990d095c845 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_176672e24ee448ede59f0a0172805ea0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07936c25d576037e2f6ce52d688b7d00 = $(`<div id="html_07936c25d576037e2f6ce52d688b7d00" style="width: 100.0%; height: 100.0%;">Xalostoc<br>Distancia: 9.91 km</div>`)[0];
+                popup_176672e24ee448ede59f0a0172805ea0.setContent(html_07936c25d576037e2f6ce52d688b7d00);
+            
+        
+
+        marker_ce2b48539cf02c13cb536e0d5b9488ea.bindPopup(popup_176672e24ee448ede59f0a0172805ea0)
+        ;
+
+        
+    
+    
+                marker_ce2b48539cf02c13cb536e0d5b9488ea.setIcon(icon_70b0e8b18c6f2a7ea0db6990d095c845);
+            
+    
+            var marker_561a2cb6e46325367532120ec610226a = L.marker(
+                [19.43531, -99.08367],
+                {
+}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+            var icon_8e74b14fcf79eaaf26371606236b4617 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_571c361048d3248e46650c5d52bba67c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f4576685ddda88b52ef2fbde5959a2b = $(`<div id="html_9f4576685ddda88b52ef2fbde5959a2b" style="width: 100.0%; height: 100.0%;">Temporada Decembrina<br>30,000 asistentes</div>`)[0];
+                popup_571c361048d3248e46650c5d52bba67c.setContent(html_9f4576685ddda88b52ef2fbde5959a2b);
+            
+        
+
+        marker_561a2cb6e46325367532120ec610226a.bindPopup(popup_571c361048d3248e46650c5d52bba67c)
+        ;
+
+        
+    
+    
+                marker_561a2cb6e46325367532120ec610226a.setIcon(icon_8e74b14fcf79eaaf26371606236b4617);
+            
+    
+            var circle_9c5e79d98cb69c6dd17802d021997528 = L.circle(
+                [19.43531, -99.08367],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 2}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+        var popup_888540a58bd077e6d548053f8473097f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2df9c862879c9ccaa967e1f3340b2309 = $(`<div id="html_2df9c862879c9ccaa967e1f3340b2309" style="width: 100.0%; height: 100.0%;">             <b>Antes del Evento</b><br>             PM2.5: 28.5 µg/m³<br>             PM10: 44.7 µg/m³<br>             NO2: 35.7 µg/m³<br>             Registros: 168             </div>`)[0];
+                popup_888540a58bd077e6d548053f8473097f.setContent(html_2df9c862879c9ccaa967e1f3340b2309);
+            
+        
+
+        circle_9c5e79d98cb69c6dd17802d021997528.bindPopup(popup_888540a58bd077e6d548053f8473097f)
+        ;
+
+        
+    
+    
+            var circle_5f84cec6869a67efe8e33db1cabf3ea4 = L.circle(
+                [19.43531, -99.08367],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 2}
+            ).addTo(map_aecff29d9d2b4c63b4e49a4673cce3ea);
+        
+    
+        var popup_8da2370209e8189059f67b4553b12b0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eedaa1f149cfcdce81a052edf8d8c0d7 = $(`<div id="html_eedaa1f149cfcdce81a052edf8d8c0d7" style="width: 100.0%; height: 100.0%;">             <b>Durante el Evento</b><br>             PM2.5: 40.8 µg/m³<br>             PM10: 63.1 µg/m³<br>             NO2: 50.5 µg/m³<br>             Registros: 265             </div>`)[0];
+                popup_8da2370209e8189059f67b4553b12b0c.setContent(html_eedaa1f149cfcdce81a052edf8d8c0d7);
+            
+        
+
+        circle_5f84cec6869a67efe8e33db1cabf3ea4.bindPopup(popup_8da2370209e8189059f67b4553b12b0c)
+        ;
+
+        
+    
+</script>
+</html>
