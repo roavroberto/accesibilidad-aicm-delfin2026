@@ -383,3 +383,77 @@ Análisis de cómo la accesibilidad al AICM (tiempos de viaje desde transporte p
 - **Amarillo:** Accesibilidad moderada (60-90 min)
 - **Cyan:** Accesibilidad regular (90-120 min)
 - **Azul:** Mala accesibilidad (>120 min)
+
+## Mapas de Accesibilidad al AICM: Versión Mejorada (Semana 5)
+
+Análisis visual mejorado del impacto de eventos masivos en la accesibilidad al AICM, con congestión más realista y colores intuitivos.
+
+### Mejoras Implementadas
+
+**1. Congestión más realista:**
+- Durante eventos: hasta 3.5x el tiempo de viaje normal
+- Después de eventos: hasta 2.5x el tiempo de viaje (recuperación gradual)
+- Modelo de dispersión gaussiana que simula el impacto espacial de la congestión
+
+**2. Colores corregidos e intuitivos:**
+- 🟢 **Verde:** Excelente accesibilidad (<30 min)
+- 🟢 **Verde claro:** Buena accesibilidad (30-60 min)
+- 🟡 **Amarillo:** Accesibilidad moderada (60-90 min)
+- 🟠 **Naranja:** Accesibilidad regular (90-120 min)
+- 🔴 **Rojo:** Mala accesibilidad (>120 min)
+
+### Impacto Visual de Eventos Masivos
+
+**Gran Premio F1 (80,000 asistentes):**
+- Antes: Mapa mayormente verde (53 min promedio)
+- Durante: Grandes zonas rojas/naranjas cerca del Autódromo (57.4 min promedio)
+- Después: Zonas naranjas/amarillas que gradualmente vuelven a verde
+
+**Concierto Foro Sol (65,000 asistentes):**
+- Antes: Mapa verde (53 min promedio)
+- Durante: Zona roja/naranja alrededor del Foro Sol (55.8 min promedio)
+- Después: Recuperación gradual a amarillo/naranja
+
+**Temporada Decembrina (30,000 asistentes):**
+- Antes: Mapa verde (53 min promedio)
+- Durante: Incremento moderado visible (54.3 min promedio)
+- Después: Recuperación casi completa
+
+### Visualizaciones Generadas
+
+**Mapas Interactivos (HTML):**
+- `accesibilidad_Gran_Premio_F1_antes.html`
+- `accesibilidad_Gran_Premio_F1_durante.html`
+- `accesibilidad_Gran_Premio_F1_despues.html`
+- `accesibilidad_Concierto_Foro_Sol_antes.html`
+- `accesibilidad_Concierto_Foro_Sol_durante.html`
+- `accesibilidad_Concierto_Foro_Sol_despues.html`
+- `accesibilidad_Temporada_Decembrina_antes.html`
+- `accesibilidad_Temporada_Decembrina_durante.html`
+- `accesibilidad_Temporada_Decembrina_despues.html`
+
+**Comparativas Visuales (PNG):**
+- `comparativa_accesibilidad_Gran_Premio_F1.png`
+- `comparativa_accesibilidad_Concierto_Foro_Sol.png`
+- `comparativa_accesibilidad_Temporada_Decembrina.png`
+
+### Hallazgos Clave
+
+1. **Transporte público resiliente:** Los incrementos en tiempo de viaje son moderados (+2.4% a +8.3%) porque el transporte público tiene carriles exclusivos
+
+2. **Impacto espacial claro:** Las zonas cercanas a los venues muestran deterioro significativo de la accesibilidad durante eventos
+
+3. **Recuperación gradual:** Después de los eventos, la accesibilidad mejora pero no inmediatamente, mostrando congestión residual
+
+4. **Contraste con contaminación:** Mientras la contaminación se incrementa 76-109% durante eventos, la accesibilidad solo se deteriora 2-8%, demostrando que el transporte público es más resiliente que la calidad del aire
+
+### Cómo Ver los Mapas
+
+**Opción 1: Ver imágenes estáticas (recomendado para vista rápida)**
+- Abre los archivos PNG en `visualizaciones/mapas_accesibilidad_eventos/`
+- Las comparativas muestran antes/durante/después lado a lado
+
+**Opción 2: Explorar mapas interactivos**
+- Descarga el repositorio completo
+- Abre cualquier archivo `.html` en tu navegador
+- Usa zoom y haz clic en los marcadores para ver información detallada
