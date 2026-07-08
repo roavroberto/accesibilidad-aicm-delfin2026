@@ -457,3 +457,79 @@ Análisis visual mejorado del impacto de eventos masivos en la accesibilidad al 
 - Descarga el repositorio completo
 - Abre cualquier archivo `.html` en tu navegador
 - Usa zoom y haz clic en los marcadores para ver información detallada
+
+## 📊 Dashboards Resumen Final del Proyecto
+
+Dos infografías de alta resolución que resumen los hallazgos clave de las 5 semanas de investigación.
+
+### Dashboard 1: Diseño Clásico (6 Paneles)
+![Dashboard Clásico](visualizaciones/resumen_visual_final_proyecto.png)
+
+**Características:**
+- Diseño de 6 paneles organizados en 2 filas
+- Panel 1: Inequidad en velocidad (1.9x más lento en zonas marginadas)
+- Panel 2: Equidad temporal (frecuencia constante 27.1 viajes/hora)
+- Panel 3: Capacidad de venues críticos (Autódromo 1.19x, Foro Sol 1.78x)
+- Panel 4: Impacto en contaminación (PM2.5 +107%, NO2 +112% durante eventos)
+- Panel 5: Resiliencia del transporte público (+8.3% máximo en tiempos de viaje)
+- Panel 6: Conclusiones y recomendaciones clave
+
+### Dashboard 2: Diseño Moderno (GridSpec)
+![Dashboard Moderno](visualizaciones/dashboard_resumen_final_v2.png)
+
+**Características:**
+- Diseño con GridSpec (3 filas, 2 columnas)
+- Visualización más compacta y moderna
+- Mismos hallazgos clave con presentación visual diferente
+- Ideal para presentaciones ejecutivas
+
+### Uso de los Dashboards
+
+Ambos dashboards están disponibles en alta resolución (300 DPI) y pueden ser utilizados para:
+- Presentaciones del Programa Delfín 2026
+- Reportes ejecutivos para el Laboratorio de IA Geoespacial
+- Publicaciones académicas y pósters científicos
+- Divulgación de resultados de investigación
+
+**Archivos:**
+- `visualizaciones/resumen_visual_final_proyecto.png` (779 KB)
+- `visualizaciones/dashboard_resumen_final_v2.png` (575 KB)
+
+
+## 📊 Dashboards Resumen Final del Proyecto
+
+Dos infografías de alta resolución que resumen los hallazgos clave de las 5 semanas de investigación.
+
+### Dashboard 1: Diseño Clásico (6 Paneles)
+![Dashboard Clásico](visualizaciones/resumen_visual_final_proyecto.png)
+
+**Características:**
+- Diseño de 6 paneles organizados en 2 filas
+- Panel 1: Inequidad en velocidad (1.9x más lento en zonas marginadas)
+- Panel 2: Equidad temporal (frecuencia constante 27.1 viajes/hora)
+- Panel 3: Capacidad de venues críticos (Autódromo 1.19x, Foro Sol 1.78x)
+- Panel 4: Impacto en contaminación (PM2.5 +107%, NO2 +112% durante eventos)
+- Panel 5: Resiliencia del transporte público (+8.3% máximo en tiempos de viaje)
+- Panel 6: Conclusiones y recomendaciones clave
+
+### Dashboard 2: Diseño Moderno (GridSpec)
+![Dashboard Moderno](visualizaciones/dashboard_resumen_final_v2.png)
+
+**Características:**
+- Diseño con GridSpec (3 filas, 2 columnas)
+- Visualización más compacta y moderna
+- Mismos hallazgos clave con presentación visual diferente
+- Ideal para presentaciones ejecutivas
+
+### Uso de los Dashboards
+
+Ambos dashboards están disponibles en alta resolución (300 DPI) y pueden ser utilizados para:
+- Presentaciones del Programa Delfín 2026
+- Reportes ejecutivos para el Laboratorio de IA Geoespacial
+- Publicaciones académicas y pósters científicos
+- Divulgación de resultados de investigación
+
+**Archivos:**
+- `visualizaciones/resumen_visual_final_proyecto.png` (779 KB)
+- `visualizaciones/dashboard_resumen_final_v2.png` (575 KB)
+
