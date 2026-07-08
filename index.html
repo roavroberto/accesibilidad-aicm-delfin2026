@@ -280,25 +280,65 @@
             </div>
             
             <div class="section">
-                <h2>📊 Mapas de Contaminación por Evento</h2>
+                <h2>📊 Mapas de Contaminación por Evento (Separados por Período)</h2>
                 <div class="section-description">
-                    <p>Mapas interactivos que muestran los niveles de contaminación (PM2.5, PM10, NO2) alrededor del AICM durante eventos masivos, con ubicaciones de estaciones SIMAT y venues.</p>
+                    <p>Mapas interactivos que muestran la evolución de la contaminación (PM2.5) antes, durante y después de eventos masivos. Cada período se muestra en un mapa independiente para mayor claridad visual.</p>
                 </div>
+                
+                <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">🎵 Concierto Foro Sol (65,000 asistentes)</h3>
                 <div class="map-grid">
-                    <a href="visualizaciones/mapas_contaminacion/mapa_interactivo_Concierto_Foro_Sol.html" class="map-card">
-                        <h3>Concierto Foro Sol</h3>
-                        <p>Contaminación durante el concierto con 65,000 asistentes. Muestra niveles de PM2.5, PM10 y NO2.</p>
-                        <span class="badge badge-principal">Evento</span>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Concierto_Foro_Sol_antes.html" class="map-card">
+                        <h3>Antes del Evento</h3>
+                        <p>Contaminación base 7 días previos al concierto. PM2.5 promedio: 29.2 µg/m³</p>
+                        <span class="badge badge-antes">Antes</span>
                     </a>
-                    <a href="visualizaciones/mapas_contaminacion/mapa_interactivo_Gran_Premio_F1.html" class="map-card">
-                        <h3>Gran Premio F1</h3>
-                        <p>Contaminación durante el Gran Premio con 80,000 asistentes. Máximo impacto ambiental.</p>
-                        <span class="badge badge-principal">Evento</span>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Concierto_Foro_Sol_durante.html" class="map-card">
+                        <h3>Durante el Evento</h3>
+                        <p>Contaminación durante el concierto. PM2.5 promedio: 51.5 µg/m³ (+76%)</p>
+                        <span class="badge badge-durante">Durante</span>
                     </a>
-                    <a href="visualizaciones/mapas_contaminacion/mapa_interactivo_Temporada_Decembrina.html" class="map-card">
-                        <h3>Temporada Decembrina</h3>
-                        <p>Contaminación durante la temporada con 30,000 asistentes. Impacto moderado.</p>
-                        <span class="badge badge-principal">Evento</span>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Concierto_Foro_Sol_despues.html" class="map-card">
+                        <h3>Después del Evento</h3>
+                        <p>Contaminación 7 días posteriores. PM2.5 promedio: 28.1 µg/m³ (recuperación)</p>
+                        <span class="badge badge-despues">Después</span>
+                    </a>
+                </div>
+                
+                <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">️ Gran Premio F1 (80,000 asistentes)</h3>
+                <div class="map-grid">
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Gran_Premio_F1_antes.html" class="map-card">
+                        <h3>Antes del Evento</h3>
+                        <p>Contaminación base 7 días previos al Gran Premio. PM2.5 promedio: 28.6 µg/m³</p>
+                        <span class="badge badge-antes">Antes</span>
+                    </a>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Gran_Premio_F1_durante.html" class="map-card">
+                        <h3>Durante el Evento</h3>
+                        <p>Contaminación durante el Gran Premio. PM2.5 promedio: 59.8 µg/m³ (+109%)</p>
+                        <span class="badge badge-durante">Durante</span>
+                    </a>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Gran_Premio_F1_despues.html" class="map-card">
+                        <h3>Después del Evento</h3>
+                        <p>Contaminación 7 días posteriores. PM2.5 promedio: 28.6 µg/m³ (recuperación completa)</p>
+                        <span class="badge badge-despues">Después</span>
+                    </a>
+                </div>
+                
+                <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;"> Temporada Decembrina (30,000 asistentes)</h3>
+                <div class="map-grid">
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Temporada_Decembrina_antes.html" class="map-card">
+                        <h3>Antes del Evento</h3>
+                        <p>Contaminación base 7 días previos a la temporada. PM2.5 promedio: 28.5 µg/m³</p>
+                        <span class="badge badge-antes">Antes</span>
+                    </a>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Temporada_Decembrina_durante.html" class="map-card">
+                        <h3>Durante el Evento</h3>
+                        <p>Contaminación durante la temporada. PM2.5 promedio: 40.8 µg/m³ (+43%)</p>
+                        <span class="badge badge-durante">Durante</span>
+                    </a>
+                    <a href="visualizaciones/mapas_contaminacion/mapa_Temporada_Decembrina_despues.html" class="map-card" style="opacity: 0.5;">
+                        <h3>Después del Evento</h3>
+                        <p>No disponible (el evento ocurre a finales de año, sin datos posteriores en el dataset)</p>
+                        <span class="badge badge-despues">No disponible</span>
                     </a>
                 </div>
             </div>
