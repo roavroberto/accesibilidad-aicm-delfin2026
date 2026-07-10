@@ -541,3 +541,116 @@ Ambos dashboards están disponibles en alta resolución (300 DPI) y pueden ser u
 - `visualizaciones/resumen_visual_final_proyecto.png` (779 KB)
 - `visualizaciones/dashboard_resumen_final_v2.png` (575 KB)
 
+
+## 🗺️ Análisis de Voronoi: Cobertura y Equidad en Transporte Público
+
+Análisis espacial avanzado utilizando diagramas de Voronoi para evaluar la cobertura del transporte público en la CDMX y su relación con la accesibilidad al AICM.
+
+### Metodología
+- **Datos:** 11,362 paradas de transporte público del GTFS CDMX
+- **Modos analizados:** Metro, Autobús/CC, Cablebús, Tranvía/Ligero, Tren
+- **Técnica:** Diagramas de Voronoi para calcular áreas de influencia por estación
+- **Proyección:** UTM Zone 14N (EPSG:32614) para análisis métrico preciso
+- **Análisis:** Detección de desiertos de transporte y métricas de equidad
+
+### Scripts del Análisis
+
+1. **`voronoi_01_preparar_datos.py`** - Carga y etiquetado de modos de transporte
+2. **`voronoi_02_generar_poligonos.py`** - Generación de diagramas de Voronoi por modo
+3. **`voronoi_03_visualizacion.py`** - Mapas individuales y comparativos
+4. **`voronoi_04_desiertos_equidad.py`** - Detección de desiertos de transporte
+5. **`voronoi_05_analisis_integrado.py`** - Análisis final con métricas de equidad
+
+### Hallazgos Principales
+
+#### 1. Cobertura por Modo de Transporte
+
+| Modo | Paradas | Área Promedio | Cobertura |
+|------|---------|---------------|-----------|
+| Autobús/CC | 10,700 | 0.45 km² | Excelente (densa) |
+| Metro | 202 | 23.76 km² | Buena |
+| Cablebús | 19 | 252.63 km² | Limitada |
+| Tranvía/Ligero | 18 | 266.67 km² | Limitada |
+| Tren | 5 | 960.00 km² | Muy limitada |
+
+#### 2. Desiertos de Transporte
+
+- **110 zonas** identificadas como desiertos de transporte (área > 2 km²)
+- **3,780 km²** de área total afectada
+- **78.7% del área de estudio** tiene cobertura deficiente
+- Esto significa que casi **4 de cada 5 kilómetros cuadrados** carecen de acceso cercano al transporte público
+
+#### 3. Desigualdad por Alcaldía
+
+**Top 5 alcaldías con más paradas:**
+1. **Cuauhtémoc:** 10,031 paradas (62% del total)
+2. **Gustavo A. Madero:** 1,599 paradas (10%)
+3. **Iztapalapa:** 1,148 paradas (7%)
+4. **Álvaro Obregón:** 1,053 paradas (6%)
+5. **Miguel Hidalgo:** 931 paradas (6%)
+
+**Interpretación:** La zona centro (Cuauhtémoc) concentra más del 60% de las paradas de transporte público, mientras que alcaldías periféricas tienen cobertura significativamente menor.
+
+### Visualizaciones Generadas
+
+**Mapas Individuales por Modo:**
+- `voronoi_Metro_areas.png` - Áreas de influencia del Metro
+- `voronoi_Autobús_CC_areas.png` - Cobertura de Autobús y Corredores
+- `voronoi_Góndola_Cablebús_areas.png` - Cablebús
+- `voronoi_Tranvía_Ligero_areas.png` - Tranvía/Ligero
+- `voronoi_Tren_areas.png` - Tren
+
+**Mapas Comparativos:**
+- `voronoi_comparativo_todos.png` - Los 4 modos principales lado a lado
+- `voronoi_multimodal_completo.png` - Todas las paradas combinadas
+
+**Análisis de Desiertos y Equidad:**
+- `desiertos_transporte_mapa.png` - Mapa de desiertos de transporte
+- `equidad_cobertura_mapa.png` - Clasificación por nivel de cobertura
+- `desiertos_por_alcaldia.png` - Desiertos intersectados con alcaldías
+- `desiertos_alcaldias_barras.png` - Gráfico de barras por alcaldía
+- `analisis_integrado_final.png` - Dashboard final con todas las métricas
+
+### Archivos de Datos Generados
+
+- `datos/resultados/paradas_con_modo_utm.geojson` - Paradas etiquetadas por modo
+- `datos/resultados/voronoi_Metro.geojson` - Polígonos de Voronoi del Metro
+- `datos/resultados/voronoi_Multimodal.geojson` - Polígonos multimodales
+- `datos/resultados/desiertos_transporte.geojson` - Zonas desérticas identificadas
+- `datos/resultados/cobertura_por_alcaldia.csv` - Resumen por alcaldía
+
+### Interpretación y Recomendaciones
+
+**Hallazgo clave:** Existe una **fuerte desigualdad espacial** en la distribución del transporte público en la CDMX. Mientras la zona centro tiene excelente cobertura, las zonas periféricas son "desiertos de transporte".
+
+**Implicaciones para la accesibilidad al AICM:**
+- Las personas en zonas desérticas deben caminar distancias mucho mayores para acceder al transporte
+- Esto incrementa significativamente el tiempo total de viaje al aeropuerto
+- La inequidad en transporte público se traduce en inequidad en acceso al AICM
+
+**Recomendaciones de política pública:**
+1. **Priorizar nuevas paradas** en las 110 zonas desérticas identificadas
+2. **Mejorar conectividad** en alcaldías periféricas (Xochimilco, Milpa Alta, Tláhuac)
+3. **Implementar sistemas alimentadores** que conecten zonas desérticas con la red principal
+4. **Monitorear equidad** usando métricas como el índice de Gini en futuros análisis
+
+### Vista Previa de Mapas
+
+**Mapa Comparativo de Cobertura:**
+![Mapa Comparativo Voronoi](visualizaciones/voronoi/voronoi_comparativo_todos.png)
+
+**Mapa de Desiertos de Transporte:**
+![Desiertos de Transporte](visualizaciones/voronoi/desiertos_transporte_mapa.png)
+
+**Análisis Integrado Final:**
+![Análisis Integrado](visualizaciones/voronoi/analisis_integrado_final.png)
+
+### Cómo Ver los Mapas
+
+**Opción 1: Ver imágenes estáticas**
+- Abre los archivos PNG en `visualizaciones/voronoi/`
+- El mapa `analisis_integrado_final.png` contiene un resumen ejecutivo completo
+
+**Opción 2: Explorar datos geoespaciales**
+- Los archivos `.geojson` pueden abrirse en QGIS, ArcGIS o cualquier software GIS
+- Permiten análisis espacial avanzado y cruce con otros datasets
